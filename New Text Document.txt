@@ -1,0 +1,51 @@
+
+<?php 
+	session_start();
+	function get_error_message($type){
+		return '<div id="error" style="width:250px;height:30px;background-color:red;margin-left:45%;border-radius:16px;opacity;0.7;font-family:Courier New;font-size:20px;color:white;text-align:center;"> 
+			 				<p onClick="hideError()" style="margin-top:4px">'.$type.'</p></div>';
+	}
+
+	if($_SESSION['auth']){
+		if($_POST['channelinputpost']!=null){
+			$connection = mysqli_connect('127.0.0.1', 'root', '', 'FOLIAGE_BET');
+			$channel = $_POST["channelinputpost"];
+			$count = $_POST["countinput"];
+			$expectation = $_POST["whoinput"];
+			if($channel==$_SESSION['channel']){
+				echo get_error_message('No, man, noway!');
+			}else{
+
+				$query = 'select balance from user where channel="'.$_SESSION['channel'].'"';
+				$result = mysqli_query($connection, $query);
+				$row = mysqli_fetch_assoc($result);
+				if($row['balance']<$count){
+					echo get_error_message('Insufficient funds');
+				}else{
+					$query = 'insert into bets (uid, gid, count, expectation) values ((select uid from user where channel="'.$_SESSION['channel'].'"), 
+						(select gid from game where streamedBy = (select uid from user where channel = "'.$channel.'") AND result = "unknown")
+						,'.$count.', "'.$expectation.'" );';
+					$result = mysqli_query($connection, $query);
+				
+					if($result==1){
+						$query = 'update user set balance = balance-'.$count.' where channel = "'.$_SESSION['channel'].'"';
+						$result1 = mysqli_query($connection, $query);
+						$query = 'update game set total = total+'.$count.' where result = "unknown" AND streamedBy = (select uid from user where channel = "'.$channel.'")';
+						$result2 = mysqli_query($connection,$query);
+						echo $result1." ".$result2;
+						//success  (select uid from user where channel = '.$channel.')
+						echo '<div id="success" style="width:250px;height:30px;background-color:green;margin-left:45%;border-radius:16px;opacity;0.7;font-family:Courier New;font-size:20px;color:white;text-align:center;"> 
+				 				<p onClick="hideSuccess()" style="margin-top:4px">Successful done</p>
+							</div>';
+						die();
+					}else if($result==0){
+						echo get_error_message('Error: false channel');
+					}
+					
+				}
+			}
+		}
+	}else{
+		header("Location: /");
+	}
+ ?>

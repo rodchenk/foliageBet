@@ -1,0 +1,296 @@
+body{
+	background: url(../img/logo_dark_darken.png) no-repeat #1a1a1a center;
+	background-attachment: fixed;
+	background-position: center; 
+}
+#main {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+	background-color:#ffffff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:18px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+#main:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+	background-color:#f6f6f6;
+}
+#main:active {
+	position:relative;
+	top:1px;
+}
+
+#menu_table{
+/*	margin-top: 5%;*/
+	margin-left: 15%;
+	width: 70%;
+	color: rgb(150,150,150);
+	font-family:Courier New;
+	font-size: 20px;
+}
+.data{
+	color: white;
+}
+
+#head{
+	width: 70%;
+	margin-left: 20%;
+/*	position: fixed;*/
+}
+#make_bet{
+	width: 530px;
+	height: 260px;
+	background-color: black; 
+	display: none;
+	margin-left: 35%;
+	margin-top: 5%;
+	opacity: 0.8;
+	border-radius:16px;
+	color: white;
+	font-size: 22px;
+	font-family: Courier New;
+}
+#channellabel{
+	padding: 20px;
+}
+#channelinput{
+	margin-left: 20px;
+	height: 25px;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: Courier New;
+	border-radius:16px;
+	text-align: center;
+}
+#whoinput{
+	margin-left: 20px;
+	text-align: center;
+	height: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: Courier New;
+	border-radius:16px;
+}
+#countinput{
+	text-align: center;
+	width: 100px;
+	margin-left: 20px;
+	height: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: Courier New;
+	border-radius:16px;
+}
+.headimages{
+	width: 30%;
+/*			width: 50px;
+	height: 50px;*/
+	margin-top: 10px;
+	padding-right: 50px;
+}
+#agreement{
+	margin-left: 10px;
+	font-size: 20px;
+	font: italic;
+	font-family: Courier New;
+	padding-left: 15px;
+	text-align: left;
+}
+#checkedagreement{
+	width: 25px;
+	height: 25px;
+}
+#agreementbuttontable{
+	margin-left: 300px;
+}
+#showhistory{
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-left: 30%;
+	margin-top: 5%;
+	border-collapse: collapse;
+	width: 800px;
+	height: 500px;
+	background-color: black;
+	opacity: 0.55;
+	border-radius: 16px;
+	display: none;
+
+}
+body::-webkit-scrollbar{
+	width: 8px;
+	background-color: black;
+	border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb{
+	background-color: grey;
+	border-radius: 10px;
+}
+
+#showhistory::-webkit-scrollbar{
+	width: 8px;
+	background-color: black;
+	border-radius: 10px;
+}
+#showhistory::-webkit-scrollbar-thumb{
+	background-color: rgb(255,255,255);
+	box-shadow: 10px;
+	border-radius: 10px;
+}
+#historytable{
+	margin-bottom: 18px;
+	margin-left: 10px;
+	padding: 13px 10px;
+	color: white;
+	font-size: 18px;
+	font-family: Courier New;
+	border-collapse: collapse;
+	background: transparent;
+	border: 1px white solid;
+	table-layout: fixed;
+}
+#br{
+	height: 5px;
+	width: 100%;
+	padding: 10px 10px;
+}
+.history{
+	border: 1px white solid;
+	margin-top: 20px;
+	padding: 10px 20px;
+}
+.negativebet{
+	color: red;
+}
+.positivebet{
+	color: green;
+}
+.mainrow{
+	color: grey;
+}
+#help{
+	width: 650px;
+	height: 600px;
+	margin-top: 5%;
+	margin-left: 32%;
+	background: white;
+	font-size: 18px;
+	opacity: 0.95;
+	font-family: Courier New;
+	border-radius: 10px;
+	padding-top: 2px;
+	padding-left: 14px;
+	padding-right: 10px;
+	letter-spacing: 1.5px;
+	display: none;
+}
+.bold{
+	font-weight: bold;
+}
+.command{
+	text-decoration: underline;
+}
+#startstream{
+	width: 530px;
+	height: 260px;
+	background-color: black; 
+	display: none;
+	margin-left: 35%;
+	margin-top: 5%;
+	opacity: 0.8;
+	border-radius:16px;
+	color: white;
+	font-size: 19px;
+	font-family: Courier New;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+#startstreambutton{
+	vertical-align: bottom;
+	margin-left: 50%;
+	padding-right: 10px;
+	
+}
+#logouthelp{
+	background-color: red;
+	opacity: 0.7;
+	width: 120px;
+	height: 40px;
+	margin-left: 40%;
+	margin-top: 2%;
+	color: pink;
+}
+.blackbackground{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(52,26,26);
+	opacity: 0.8;
+}
+#yougotit{
+	position: fixed;
+	top: 12%;
+	left: 10%;
+	width: 25%;
+	height: 50%;
+	background-size: 100%;
+	background-position: top left;
+	background-image: url(../img/trouble.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+}
+#consuelatext{
+	position: fixed;
+	top: 15%;
+	left: 40%;
+	width: 40%;
+	height: 50%;
+	background-color: transparent;
+}
+.greenbackground{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(26,46,26);
+	opacity: 0.8;
+}
+#fogotit{
+	position: fixed;
+	top: 12%;
+	left: 10%;
+	width: 25%;
+	height: 50%;
+	background-size: 100%;
+	background-position: top left;
+	background-image: url(../img/success.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+}
